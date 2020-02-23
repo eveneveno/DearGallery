@@ -1,0 +1,152 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+     $(function() {
+         var lst = [];
+         $.getJSON( "data/keywords.json", function( data ) { 
+            $.each( data, function( key, val ) { 
+                lst.push(key);
+            });
+         });
+
+        $('#txt-search').autocomplete({
+           source: lst,
+           autoFocus:true
+        });
+
+     });
+  </script>
+	<style>
+        audio{
+            opacity: 0.02;
+        }
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+		#content{
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		main{
+            display: block;
+			grid-column: 2 / 4;
+			grid-row: 1 / 3;
+			background-color: rgba(0,0,0,.5)
+		}
+		aside{
+            display: block;
+			grid-column: 1 / 2;
+            grid-row: 1 / 2;
+			background: #ecce6d;
+		}
+		nav{
+			grid-column: 1 / 2;
+            grid-row: 2 / 3;
+			background: #434e52;
+		}
+		footer{
+			grid-column: span 3;
+			background: #5b8c85;
+		}
+        h3{
+            color:black
+        }
+        #MyButton{
+            border: solid;
+            border-width: thin;
+            border-color: gainsboro;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+		body{
+            background-image: url('collections/N-6399-00-000035-wpu.jpg');
+            background-size: cover;
+			font-family: 'Nunito Semibold';
+			text-align: center;
+		}
+	</style>
+     
+    <audio controls autoplay>
+      <source src="data/ed-sheeran.mp3" type="audio/mpeg">
+    </audio>
+  <title>National Gallery London Collection</title>
+</head>
+<body>
+    
+  <div class="container" style="padding:50px 250px;">
+    <h1>National Gallery London</h1> <br>
+    <!-- <h1>Search Painting</h1><br> -->
+	<form role="form">
+        <div class="form-group row">
+          <div class="col-sm-10">
+          <input type="input" class="form-control input-lg" id="txt-search" placeholder="e.g. claude-monet-the-thames-below-westminster">
+        </div>
+          <input type="button" value="Search" id="MyButton">
+        </div>
+	</form>
+  </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+   $('#MyButton').click(function(){
+       
+            $('#content').remove();
+       
+            var searchField = $('#txt-search').val();    	
+            var regex = new RegExp(searchField, "i");
+    
+            $.getJSON( "data/keywords.json", function( data ) {
+                
+                
+                 
+                  $.each( data, function( key, val ) {
+
+                  if (key.search(regex) != -1) {
+                      
+                    var items = [];
+                    var path = ["collections", val.img_id];  
+                    items.push("<main>"+"<center> <img src= '" + path.join("/") + "' width = 100%> </center> " + "</main>");
+                    items.push("<aside>");    
+                     items.push("<h3>" + val.caption + "</h3>"); 
+                    items.push("<h4> by <em>" + val.author + "</h4>");
+                    items.push("<p style='color:black;'>" + val.year + "</p>");
+                    items.push("</aside>");  
+                    items.push("<nav> <h4> Keywords: </h4> <p style='color:white; opacity:0.5'>"+val.keywords + "</p> </nav>");
+                    items.push("<footer> <h4> Short Description: </h4> <p>" + val.short_text +"</p> </footer>");
+                    items.push("<br> <br>")
+                      
+                    $( "<div/>", {
+                        "id": "content",
+                        html: items.join( "" )
+                      }).appendTo( "body" );    
+              };
+                      
+                 
+            });
+        }); 
+    
+    });
+})
+</script>
