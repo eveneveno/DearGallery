@@ -12,10 +12,17 @@
   <script>
      $(function() {
          var lst = [];
+         var authors = [];
+
          $.getJSON( "data/keywords.json", function( data ) { 
             $.each( data, function( key, val ) { 
                 lst.push(key);
+                authors.push(val.author);
             });
+
+            let unique_author = [...new Set(authors)];
+            $('#count').html("about " + unique_author.length+" brilliant minds and "+ lst.length + " stories...");
+
          });
 
         $('#txt-search').autocomplete({
@@ -93,7 +100,7 @@
     
   <div class="container" style="padding:50px 250px;">
     <h1>National Gallery London</h1> <br>
-    <!-- <h1>Search Painting</h1><br> -->
+    <p id="count"></p>
 	<form role="form">
         <div class="form-group row">
           <div class="col-sm-10">
@@ -132,6 +139,7 @@ $(document).ready(function(){
                      items.push("<h3>" + val.caption + "</h3>"); 
                     items.push("<h4> by <em>" + val.author + "</h4>");
                     items.push("<p style='color:black;'>" + val.year + "</p>");
+                    items.push("<p style='color:black;'>" + val.material + "</p>");
                     items.push("</aside>");  
                     items.push("<nav> <h4> Keywords: </h4> <p style='color:white; opacity:0.5'>"+val.keywords + "</p> </nav>");
                     items.push("<footer> <h4> Short Description: </h4> <p>" + val.short_text +"</p> </footer>");
