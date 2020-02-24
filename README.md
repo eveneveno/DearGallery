@@ -3,7 +3,7 @@
 <p> ✨ Welcome to Baibai's Dream Gallery ✨ </p> 
 </h3>
 
-> a girl who likes collectings dreasm ...
+> a girl who likes collectings dreams ...
 
 <h3 align="center">
 <img src="docs/img/screenshot.png" width="100%"/>
