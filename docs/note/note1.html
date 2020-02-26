@@ -1,0 +1,691 @@
+<!DOCTYPE html><html><head>
+      <title>note1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/linning/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.2/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h3 class="mume-header" id="art-movement-the-way-we-interprete-the-world-the-way-we-make-images">&#x1F30A; Art Movement -  The way we interprete the world, the way we make images.</h3>
+
+<blockquote>
+<p>When we talked about an image, what are we looking at ?</p>
+</blockquote>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mspace width="1em"></mspace><mtext>where&#xA0;</mtext><mi>z</mi><mo>&#x223C;</mo><mi>N</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X = F(z), \quad \text{where } z \sim N(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord text"><span class="mord">where&#xA0;</span></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x223C;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span></p>
+<ul>
+<li>
+<p>Omitted (due to lack of collections):</p>
+<ul>
+<li>Romanesque art (8) / Byzantine art (8)/ Sienese School (131) / French Renaissance (40) / Spanish Renaissance (87) / Florentine painting (134) / Paduan school (140) / Milanese School (21) / School of Ferrara (26) / School of Fontainebleau (63) / School of Ferrara (26) / Sturm and Drang (110) / Pre-Raphaelite Brotherhood (142) / Hudson River School (372) / Nazarene movement (87) / Spanish Eclectism (21) / Folk art (83) / Primitivism (346) / Vienna Secession (196) / Nihonga (340) / Japonism (48) / Arts and Crafts movement (503) / Nazarene movement (87) / Geometric abstraction (169) / De Stijl (22) / Constructivism (157) / Metaphysical art (33) / American modernism (149) / Suprematism (42) / Shin-hanga (584) / S&#x14D;saku-hanga (23) / Section d&apos;Or (23) / Bauhaus style (108) / Pennsylvania Impressionism (3) / Die Br&#xFC;cke (51) / Art Deco (1920-1939) / Socialist realism (24) / Harlem Renaissance (110) / New Objectivity (120) ... (and many many more)</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/gothic-art/m03mmhl?categoryId=art-movement">Gothic art</a> (1150-1375) &#x2728;</p>
+<ul>
+<li><img src="img/gothic.png" alt="434 items"></li>
+<li>pre- renaissance period</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/renaissance/m06cvx?categoryId=art-movement">Renaissance</a> (1300-1600) &#x2728;</p>
+<ul>
+<li><img src="img/renaissance.png" alt="12,158 terms"></li>
+<li>the French word <code>Renaissance</code> means  <code>rebirth</code> and defines the period as one of cultural revival and renewed interest in classical antiquity.</li>
+<li><a href="https://artsandculture.google.com/entity/venetian-painting/m080c2h7?categoryId=art-movement">Venetian Painting</a> (1400-1500)
+<ul>
+<li><strong>325</strong> terms</li>
+</ul>
+</li>
+<li><a href="https://artsandculture.google.com/entity/italian-renaissance/m01vrkm?categoryId=art-movement">Italian Renaissance</a> (1420-1600)
+<ul>
+<li><strong>1860</strong> terms</li>
+<li>The Renaissance began in Tuscany, and was centred in the city of Florence.</li>
+</ul>
+</li>
+<li><a href="https://artsandculture.google.com/entity/northern-renaissance/m03mgmk?categoryId=art-movement">Northern Renaissance</a> (1430-1580)
+<ul>
+<li><strong>4426</strong> terms</li>
+<li>The adoption in northern Europe, mainly <code>Germany</code> and the <code>Netherlands</code>, of the artistic ideals of the Italian Renaissance. The prime mover was the German artist Albrecht D&#xFC;rer (1471&#x2013;1528) who travelled twice to Italy to discover the &#x2018;secrets&#x2019; of the Italian masters, especially the <ins>mathematical principles of perspecitve and proportion</ins>.</li>
+</ul>
+</li>
+<li><a href="https://artsandculture.google.com/entity/german-renaissance/m06r8gg?categoryId=art-movement">German Renaissance</a> (1450)
+<ul>
+<li><strong>1795</strong> terms</li>
+<li>Term given to the art, and in particular the <ins>architecture (castle)</ins>, created in the region along the River Weser and adjacent areas in Germany.</li>
+</ul>
+</li>
+<li><a href="https://artsandculture.google.com/entity/high-renaissance/m01z__d?categoryId=art-movement">High Renaissance</a> (1490-1527)
+<ul>
+<li><strong>510</strong> terms</li>
+<li>A term which is generally taken to refer to art produced in Italy in the early decades of the 16th century when the careers of the great Renaissance masters, Leonardo da Vinci, Raphael, and Michelangelo overlapped.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/dutch-and-flemish-renaissance-painting/m0gmxl_?categoryId=art-movement">Dutch and Flemish Renaissance painting</a> (1500-1600) &#x2728;</p>
+<ul>
+<li><img src="img/dutch_and_flemish.png" alt="871"></li>
+<li>Represents the 16th-century response to Italian Renaissance art in the Low Countries. Dutch and Flemish painters were also instrumental in establishing new subjects such as <ins>landscape painting</ins> and genre painting.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/antwerp-school/m02qzz41?categoryId=art-movement">Antwerp school</a> (1500-1700) &#x2728;</p>
+<ul>
+<li><img src="img/antwerp.png" alt="925"></li>
+<li>The city experienced an artistic renewal in the 17th century. The large workshops of Peter Paul Rubens and Jacob Jordaens, and the influence of Anthony van Dyck, made Antwerp the center of the Flemish Baroque.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/mannerism/m05095?categoryId=art-movement">Mannerism</a> (1520-1580) &#x2728;</p>
+<ul>
+<li><img src="img/mannerism.png" alt="1791 terms"></li>
+<li>It is sometimes referred to as <code>late Renaissance</code>, and the move away from High Renaissance classicism is already evident in the late works of Leonardo da Vinci and Raphael, and in the art of Michelangelo from the middle of his creative career. Although 16th-century artists took the formal vocabulary of the High Renaissance as their point of departure, they used it in ways that were diametrically opposed to the harmonious ideal it originally served.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/academic-art/m021gt_?categoryId=art-movement">Academic art</a> (1560-1900)</p>
+<ul>
+<li><img src="img/academic.png" alt="1440 items"></li>
+<li>Academic art is the art and artists influenced by the standards of the French Acad&#xE9;mie des Beaux-Arts, which was practiced under the movements of Neoclassicism and Romanticism, and the art that followed these two movements in the attempt to synthesize both of their styles, and which is best reflected by the paintings of William-Adolphe Bouguereau, Thomas Couture, and Hans Makart.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/dutch-golden-age/m01k12m?categoryId=art-movement">Dutch Golden Age</a> (1575-1675)</p>
+<ul>
+<li><img src="img/dutch.png" alt="8177"></li>
+<li>The Dutch Golden Age was a period in the history of the Netherlands, roughly spanning the 17th century, in which Dutch trade, science, military, and art were among the most acclaimed in the world.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/classicism/m0pbzd?categoryId=art-movement">Classicism</a> (1590-1800) &#x2728;</p>
+<ul>
+<li><img src="img/classicism.png" alt="730 terms"></li>
+<li>Term referring to a web of ideas, attitudes and traditions derived from but not wholly dependent on a respect for and a close study of the literary and/or artistic activities of the ancient <code>Greeks</code> and <code>Romans</code>. The aim of classicism, in all media, has been to construct an <ins>ideal vision</ins> and version of human experience that should inspire and instruct by its <ins>nobility, authority, rationality and truth</ins> (of which beauty may be considered a visible manifestation), and to provide convincing models for imitation.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/caravaggisti/m0c3v8gh?categoryId=art-movement">Caravaggisti</a> (1600-1650) &#x2728;</p>
+<ul>
+<li><img src="img/caravaggisti.png" alt="268"></li>
+<li>The Utrecht Caravaggisti painted predominantly <ins>history scenes and genre</ins> pieces. These are life-size paintings with economical and powerful compositions; the impact of the scene is heightened by contrasting areas of <ins>light and dark</ins>, and a small number of figures who are abruptly cropped so that they seem to be portrayed in close-up.</li>
+<li><a href="https://artsandculture.google.com/entity/utrecht-caravaggism/m06rbhl?categoryId=art-movement">Utrecht Caravaggism</a> (1610-1630)
+<ul>
+<li><img src="img/utrecht_caravaggism.png" alt="84"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/baroque/m0194x?categoryId=art-movement">Baroque</a> (1600-1725) &#x2728;</p>
+<ul>
+<li><img src="img/baroque.png" alt="34610 terms"></li>
+<li>The principal European style in the visual arts in the 17th century and the first half of the 18th; generally considered to be characteristic of the period of Caravaggio, Rubens, Rembrandt, Giordano and Tiepolo in painting, Bernini in sculpture, and Borromini, Fischer von Erlach and Wren in architecture.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/ukiyo-e/m0bwbv?categoryId=art-movement">Ukiyo-e</a> (1620-1912) &#x2728;</p>
+<ul>
+<li><img src="img/ukiyo-e.png" alt="8216 iterms"></li>
+<li>Japanese for &#x2018;pictures of the <ins>floating world</ins>&#x2019; and referring to transient everyday life, it provided a major source of imagery in Japanese art from the 17th to the 19th centuries, particularly in the work of printmakers such as Hiroshige, Hokusai, and Utamaro. Typical subjects included <ins>theatre scenes</ins>, with actors in well-known roles, and views of the night-life of Edo (as Tokyo was then called). The resulting <ins>brightly coloured</ins> Woodcut prints were imported into Europe from the middle of the 19th century and had a great influence on many avant-garde artists, including the Impressionists and Post-Impressionists, who were particularly attracted by the bold compositions and striking colours of Ukiyo-e prints.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/rococo/m096jl?categoryId=art-movement">Rococo</a> (1730) &#x2728;</p>
+<ul>
+<li><img src="img/rococo.png" alt="2655"></li>
+<li>A decorative style of the early to mid-18th century, primarily influencing the ornamental arts in Europe, especially in France, southern Germany and Austria. The character of its formal idiom is marked by asymmetry and naturalism, displaying in particular a fascination with shell-like and watery forms.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/neoclassicism/m0190t4?categoryId=art-movement">Neoclassicism</a> (1750-1860) &#x2728;</p>
+<ul>
+<li><img src="img/neoclassicism.png" alt="2638"></li>
+<li>The last stage of the classical tradition in architecture, sculpture, painting and the decorative arts. Neo-classicism was the successor to Rococo in the second half of the 18th century and was itself superseded by various historicist styles in the first half of the 19th century</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/romanticism/m06hsk?categoryId=art-movement">Romanticism</a> (1770-1850) &#x2728;</p>
+<ul>
+<li><img src="img/romanticism.png" alt="7027"></li>
+<li>Though hard to define precisely, it essentially involves: 1) placing emotion and intuition before (or at least on an equal footing with) reason; 2) a belief that there are crucial areas of experience neglected by the rational mind; and 3) a belief in the general importance of the individual, the personal and the subjective. In fact it embodies a critique of that faith in progress and rationality that had characterized the main trend of Western thought and action since the Renaissance.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/na%C3%AFve-art/m01b8q0?categoryId=art-movement">Na&#xEF;ve art</a> (1800- )</p>
+<ul>
+<li><img src="img/naive.png" alt="67"></li>
+<li>In the course of the 19th century in Europe, the arts and crafts of rural peoples (normally termed folk art, or sometimes &#x2018;peasant art&#x2019;) and the urban traditions of semi-skilled craftsmen gradually faltered in the face of growing industrialization.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/barbizon-school/m01yfx3?categoryId=art-movement">Barbizon school</a> (1830-1870) &#x2728;</p>
+<ul>
+<li><img src="img/barbizon.png" alt="817"></li>
+<li>The Barbizon painters have often been treated mainly as a transitional generation, helping to bridge the gap between classical landscape painting of the late 18th century and the early 19th and Impressionism. Romantic in their desire to break with conventions, their anti-urban sentiment and, above all, their lyrical appreciation of nature, they were Realist in their avoidance of the heroic, their preference for humble themes and sometimes in their technique.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/luminism/m08cvxr?categoryId=art-movement">Luminism</a> (1850-1950)</p>
+<ul>
+<li><img src="img/luminism.png" alt="186"></li>
+<li>A style in 19th-century American painting characterized by the realistic rendering of light and atmosphere.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/hague-school/m05xlq3?categoryId=art-movement">Hague School</a> (1860-1890)</p>
+<ul>
+<li><img src="img/hague.png" alt="683"></li>
+<li>The Hague school painters drew their inspiration from the flat polder landscape and the everyday lives of peasants and fishermen around The Hague and the nearby port of Scheveningen.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>From Narrative to Abstract. Welcome to Modern world ! &#x1F984;</p>
+</blockquote>
+<ul>
+<li>
+<p><a href="https://artsandculture.google.com/entity/modern-art/m015r61?categoryId=art-movement">Modern art</a> (1860-1975)</p>
+<ul>
+<li><img src="img/modern.png" alt="19428"></li>
+<li>Modern art includes artistic work produced during the period extending roughly from the <code>1860s to the 1970s</code>, and denotes the styles and philosophy of the art produced during that era. The term is usually associated with art in which the traditions of the past have been thrown aside in a <code>spirit of experimentation</code>. Modern artists experimented with new ways of seeing and with fresh ideas about the <code>nature of materials</code> and <code>functions of art</code>. A tendency away from the <code>narrative</code>, which was <code>characteristic for the traditional arts</code>, toward <code>abstraction</code> is characteristic of much modern art. More recent artistic production is often called contemporary art or postmodern art.</li>
+<li>Modern art begins with the heritage of painters like Vincent van Gogh, Paul C&#xE9;zanne, Paul Gauguin, Georges Seurat and Henri de Toulouse-Lautrec all of whom were essential for the development of modern art.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/impressionism/m03xj1?categoryId=art-movement">Impressionism</a> (1860)</p>
+<ul>
+<li><img src="img/impressionism.png" alt="3111"></li>
+<li>The primary use of the term Impressionist is for a group of <code>French</code> painters who worked between around 1860 and 1900, especially to describe their works of the later 1860s to mid-1880s. These artists include Fr&#xE9;d&#xE9;ric Bazille, Paul C&#xE9;zanne, Edgar Degas, Edouard Manet, Claude Monet, Berthe Morisot, Camille Pissarro, Auguste Renoir and Alfred Sisley, as well as Mary Cassatt, Gustave Caillebotte (who was also an important early collector), Eva Gonzal&#xE8;s, Armand Guillaumin and Stanislas L&#xE9;pine.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/aestheticism/m0182g8?categoryId=art-movement">Aestheticism</a> (1868-1900)</p>
+<ul>
+<li><img src="img/aestheticism.png" alt="907"></li>
+<li>Aestheticism flourished in England from the 1870s to the 1890s, its principal theorists being Walter Pater, in the conclusion to The Renaissance (1873), and Oscar Wilde. The foremost practitioners in painting were Whistler and Albert Moore.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/modernism/m04y41?categoryId=art-movement">Modernism</a> (1875-1960)</p>
+<ul>
+<li><img src="img/modernism.png" alt="1675"></li>
+<li>The invention and the effective pursuit of artistic strategies that seek not just close but essential connections to the powerful forces of social modernity. Despite being intermittent in their occurrence and unsystematic in nature, these strategies have been most effective in Europe and its colonies from the mid-19th century and in the USA from the early 20th, moving from the margins to the centre of visual cultures, from reactive radicality to institutionalized normality.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/american-renaissance/m01vztg?categoryId=art-movement">American Renaissance</a> (1876-1917)</p>
+<ul>
+<li><img src="img/american_renaissance.png" alt="119"></li>
+<li>Characterized by renewed national self-confidence and a feeling that the United States was the heir to Greek democracy, Roman law, and Renaissance humanism. The era spans the period between the Centennial Exposition and the United States&apos; entry into World War I.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/american-impressionism/m021y0c?categoryId=art-movement">American Impressionism</a> (1880-1900)</p>
+<ul>
+<li><img src="img/american_impressionism.png" alt="715"></li>
+<li>American artists such as Theodore Robinson, Julian Alden Weir, Childe Hassam and John H. Twachtman presented subjects in bright sunlight and used flecked brushwork and intense colour, but frequently retained a more conservative approach to composition and the representation of figures than their French counterparts.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/tonalism/m05_7nw?categoryId=art-movement">Tonalism</a> (1880-1915)</p>
+<ul>
+<li><img src="img/tonalism.png" alt="899"></li>
+<li>Style of American painting that appeared between c. 1880 and 1920, defined by evocative atmospheric effects and a limited palette of soft, mostly dark colours. Its primary influences were French Barbizon school ideas as adopted by George Inness and William Morris Hunt, and the aesthetic movement, as embodied by James McNeill Whistler. The style is characterized by soft, diffused light, muted tones, and hazily outlined objects, all of which imbue the works with a strong sense of mood. The term was applied especially to landscape painting in which nature is presented as serene or mysterious, never disquieting or dramatic.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/amsterdam-impressionism/m0c2n08?categoryId=art-movement">Amsterdam Impressionism</a> (1885-1930)</p>
+<ul>
+<li><img src="img/amsterdam_impressionism.png" alt="3057"></li>
+<li>Like their French colleagues, these Amsterdam painters put their impressions onto canvas with rapid, visible strokes of the brush. They focused on depicting the everyday life of the city.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/post-impressionism/m015xrq?categoryId=art-movement">Post-Impressionism</a> (1886-1905)</p>
+<ul>
+<li><img src="img/postimpressionism.png" alt="2627"></li>
+<li>Post-Impressionism can be loosely defined as a rejection of the Impressionists&#x2019; concern for the naturalistic depiction of light and colour in favour of an emphasis on abstract qualities or symbolic content. It therefore includes neo-impressionism, symbolism, Cloisonnism, synthetism, and the later work of some Impressionists.</li>
+<li><a href="https://artsandculture.google.com/entity/neo-impressionism/m049xrv?categoryId=art-movement">Neo-impressionism</a> (1880-1890)
+<ul>
+<li><img src="img/neoimpressionism.png" alt="542"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/les-nabis/m015ym8?categoryId=art-movement">Les Nabis</a> (1888-1896)</p>
+<ul>
+<li><img src="img/lesnabis.png" alt="272"></li>
+<li>Les Nabis were a group of Post-Impressionist avant-garde artists who set the pace for fine arts and graphic arts in France in the 1890s.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/synthetism/m03kw85?categoryId=art-movement">Synthetism</a> (1888-1896)</p>
+<ul>
+<li><img src="img/synthetism.png" alt="121"></li>
+<li>Style of painting that developed out of Cloisonnism and formed a current within Symbolism. It was practised by Paul Gauguin and his circle in the late 1880s and early 1890s. The term derives from the French verb synth&#xE9;tiser (to synthesize) and is based on the idea that art should be a synthesis of three features: the outward appearance of natural forms, the artist&#x2019;s feelings about his subject, and purely aesthetic considerations of line, colour, and form.</li>
+<li>Although realistic, tangible subjects served as their starting-point, the artists <code>distorted</code> these images in order to express more clearly certain moods or interpretations.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/art-nouveau/m0g6pl?categoryId=art-movement">Art Nouveau</a> (1890-1914)</p>
+<ul>
+<li><img src="img/artnouveau.png" alt="1698"></li>
+<li>Its chief manifestations were in architecture and the decorative and graphic arts. It is characterized by sinuous, asymmetrical lines based on organic forms; in a broader sense it encompasses the geometrical and more abstract patterns and rhythms that were evolved as part of the general reaction to 19th-century historicism.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/school-of-paris/m06b94t?categoryId=art-movement">School of Paris</a> (1890-1940)</p>
+<ul>
+<li><img src="img/paris.png" alt="81"></li>
+<li>Referring to the non-French artists who had settled and worked in Paris for some years, many of whom lived either in Montmartre or Montparnasse, and who included a number of artists of Eastern European or Jewish origin.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/ashcan-school/m039wln?categoryId=art-movement">Ashcan School</a> (1891-1918) <span style="color:Purple">  &#x5783;&#x573E;&#x7BB1;&#x753B;&#x6D3E;???</span></p>
+<ul>
+<li><img src="img/ashcan.png" alt="373"></li>
+<li>Term first used by Holger Cahill and Alfred Barr in Art in America (New York, 1934) and loosely applied to American urban realist painters. In particular it referred to those members of The Eight who shortly after 1900 began to portray ordinary aspects of city life in their paintings.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/heidelberg-school/m01y0kv?categoryId=art-movement">Heidelberg School</a> (1891)</p>
+<ul>
+<li><img src="img/heidelberg.png" alt="56"></li>
+<li>Group of artists active in the late 19th century in Heidelberg, a suburb of Melbourne, who introduced plein-air Impressionism to Australia.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/american-realism/m02r9nsg?categoryId=art-movement">American Realism</a> (1900-1930)</p>
+<ul>
+<li><img src="img/american_realism.png" alt="614"></li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/cubism/m09ff3?categoryId=art-movement">Cubism</a> (1907-1921)</p>
+<ul>
+<li><img src="img/cubism.png" alt="502"></li>
+<li>Although the term is not specifically applied to a style of architecture except in former Czechoslovakia, architects did share painters&#x2019; formal concerns regarding the conventions of representation and the <code>dissolution of three-dimensional form</code>. Cubism cannot definitively be called either a style, the art of a specific group or even a movement. It embraces widely disparate work; it applies to artists in different milieux; and it produced no agreed manifesto. Yet, despite the difficulties of definition, it has been called the first and the most influential of all movements in 20th-century art.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/futurism/m01hl64?categoryId=art-movement">Futurism</a> (1909-1914)</p>
+<ul>
+<li><img src="img/futurism.png" alt="129"></li>
+<li>The new ideology of Futurism set itself with violent enthusiasm against the weighty inheritance of an art tied to the Italian cultural tradition and exalted the idea of an aesthetic generated by the modern myth of the machine and of speed.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/expressionism/m0pybl?categoryId=art-movement">Expressionism</a> (1912)</p>
+<ul>
+<li><img src="img/expressionism.png" alt="1099"></li>
+<li>Although in part an artistic reaction both to academic art and to Impressionism, the movement should be understood as a form of <code>&#x2018;new Humanism&#x2019;</code>, which sought to communicate man&#x2019;s spiritual life. It reflected the deep intellectual unrest c. 1900, reflected in contemporary literary sources, about the destruction of the traditional relationship of trust between man and the world.</li>
+<li><a href="https://artsandculture.google.com/entity/german-expressionism/m04191d?categoryId=art-movement">German Expressionism</a> (1905-1940)
+<ul>
+<li><img src="img/german_expressionism.png" alt="180"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/dada/m0298q?categoryId=art-movement">Dada</a> (1916-1922)</p>
+<ul>
+<li><img src="img/dada.png" alt="47"></li>
+<li>Artistic and literary movement launched in Zurich in 1916 but shared by independent groups in New York, Berlin, Paris, and elsewhere. The Dadaists channelled their revulsion at World War I into an indictment of the nationalist and materialist values that had brought it about. They were united not by a common style but by a rejection of conventions in art and thought, seeking through their unorthodox techniques, performances, and provocations to shock society into self-awareness.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/fauvism/m04lx1?categoryId=art-movement">Fauvism</a> (1905-1908)</p>
+<ul>
+<li><img src="img/fauvism.png" alt="58"></li>
+<li>Movement in French painting from c. 1898 to 1906 characterized by a violence of colours, often applied unmixed from commercially produced tubes of paint in broad flat areas, by a spontaneity and even roughness of execution and by a bold sense of surface design.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/der-blaue-reiter/m02xk0r?categoryId=art-movement">Der Blaue Reiter</a> (1911-1914)</p>
+<ul>
+<li><img src="img/derblauereiter.png" alt="100"></li>
+<li>&#x2018;None of us seeks to reproduce nature directly&#x2026;We are seeking to give artistic form to inner nature, i.e. spiritual experience.&#x2019; With its bright colours and often semi-abstract images inspired by a wide variety of sources, the Blaue Reiter was perhaps the most lyrical of the expressionist movements of the early 20th century.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/surrealism/m073_6?categoryId=art-movement">Surrealism</a> (1920)</p>
+<ul>
+<li><img src="img/surrealism.png" alt="331"></li>
+<li>The Surrealists perceived a deep crisis in Western culture and responded with a revision of values at every level, inspired by the psychoanalytical discoveries of <code>Freud</code> and the political ideology of <code>Marxism</code>. In both poetry and the visual arts this revision was undertaken through the development of <code>unconventional techniques</code>, of which Automatism was paramount.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/magical-realism/m0127jb?categoryId=art-movement">Magical Realism</a> (1920-1960)</p>
+<ul>
+<li><img src="img/magical_realsim.png" alt="129"></li>
+<li>Style of painting popular in Europe and the USA mainly from the 1920s to 1940s, with some followers in the 1950s. It occupies a position between Surrealism and Photorealism, whereby the subject is rendered with a photographic naturalism, but where the use of flat tones, ambiguous perspectives, and strange juxtapositions suggest an imagined or dreamed reality.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/social-realism/m01p0s6?categoryId=art-movement">Social realism</a> (1934)</p>
+<ul>
+<li><img src="img/social_realism.png" alt="8385"></li>
+<li>Term used to refer to the work of painters, printmakers, photographers and film makers who draw attention to the everyday conditions of the working classes and the poor, and who are critical of the social structures that maintain these conditions.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/regionalism/m0b3791?categoryId=art-movement">Regionalism</a> (1925-1945)</p>
+<ul>
+<li><img src="img/regionalism.png" alt="61"></li>
+<li>Movement in American art that focused on local, representational subject-matter. Regionalism was the dominant style in American art during the 1930s and into the 1940s, often depicting scenes of the rural Midwest, American folklore, or the hard times during the Great Depression. Regionalism can be viewed as an artist&#x2019;s desire to connect with his or her surroundings rather than to universal themes (as was often the case with abstraction).</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/public-art/m01v7lm?categoryId=art-movement">Public art</a> (1930-)</p>
+<ul>
+<li><img src="img/public_art.png" alt="161"></li>
+<li>New public art forms emerged, seen in digital and internet media, pop-up shops, and temporary open-access studios, street performance, and urban activism, as well as architectural collaborations in landscape, environment or urban design.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/pop-art/m0q4mn?categoryId=art-movement">Pop art</a> (1950)</p>
+<ul>
+<li>Hamilton defined Pop in 1957 as: &#x2018;Popular (designed for a mass audience); Transient (short term solution); Expendable (easily forgotten); Low Cost; Mass Produced; Young (aimed at Youth); Witty; Sexy; Gimmicky; Glamorous; and Big Business&#x2019;.</li>
+<li>Hamilton set out, in paintings such as $he (1958&#x2013;61; London, Tate), to explore the hidden connotations of imagery taken directly from advertising and popular culture, making reference in the same work to pin-ups and domestic appliances as a means of commenting on the covert eroticism of much advertising presentation.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/abstract-expressionism/m012yb9?categoryId=art-movement">Abstract expresionsim</a> (1946)</p>
+<ul>
+<li><img src="img/abstract_expresionism.png" alt="18861"></li>
+<li>They range from Barnett Newman&#x2019;&#x2019;s unbroken fields of colour to Willem de Kooning&#x2019;s violent handling of the figure. They were linked by a concern with varying degrees of abstraction used to convey strong emotional or expressive content.</li>
+<li><a href="https://artsandculture.google.com/entity/color-field/m03hmqc?categoryId=art-movement">Color field</a> (1948-1968)</li>
+</ul>
+</li>
+<li>
+<p><a href="https://artsandculture.google.com/entity/street-art/m07vwy6?categoryId=art-movement">Street art</a> (1970)</p>
+<ul>
+<li><img src="img/street_art.png" alt="6631"></li>
+<li>Slogans of protest and political or social commentary graffitied onto public walls are the precursor to modern graffiti and street art, and continue as one aspect of the genre.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Finally... now is <code>Contemporaray art</code>!</p>
+</blockquote>
+<ul>
+<li><a href>Contemporary art</a> (1980-)
+<ul>
+<li><img src="img/contemporary_art.png" alt="26043"></li>
+<li>Contemporary art is the art of today, produced in the second half of the 20th century or in the 21st century. Contemporary artists work in a globally influenced, culturally diverse, and technologically advancing world. Their art is a dynamic combination of materials, methods, concepts, and subjects that continue the challenging of boundaries that was already well underway in the 20th century. Diverse and eclectic, contemporary art as a whole is distinguished by the very lack of a uniform, organising principle, ideology, or &quot;-ism&quot;.</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
